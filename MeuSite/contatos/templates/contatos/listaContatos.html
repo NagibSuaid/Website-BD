@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html lang='pt' dir='ltr'>
+    <head>
+    <meta charset='utf-8'>
+    <title>
+        Lista de Contatos
+    </title>
+    </head>
+    <body>
+        {% for pessoa in pessoas %}
+            pessoa.nome
+            pessoa.email
+        {% empty %}
+            Nenhum Contato
+        {% endfor %}
+    </body>
+</html>
