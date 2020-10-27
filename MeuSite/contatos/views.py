@@ -8,6 +8,6 @@ class ContatosListView(View):
     def get(self, request, *args, **kwargs):
         pessoas=Pessoa.objects.all()
         context={
-            'pessoas'=pessoas
+            'pessoas':pessoas
         }
         return render(request,'contatos/listaContatos.html')

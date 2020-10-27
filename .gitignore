@@ -4,3 +4,5 @@ __pycache__/
 # Django stuff:
 *.log
 local_settings.py
+
+config_files/
