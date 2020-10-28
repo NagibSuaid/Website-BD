@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='br' dir='ltr'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Cria Contatos</title>
+    </head>
+    <body>
+        <h1>
+            Crie um Contato
+        </h1>
+        <form class='' action='' method='post'>
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <button type='submit'>Enviar</button>
+        </form>    
+    </body>
+</html>

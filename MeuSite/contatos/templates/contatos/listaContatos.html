@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-
-<html lang='pt' dir='ltr'>
-    <head>
-    <meta charset='utf-8'>
-    <title>
-        Lista de Contatos
-    </title>
-    </head>
-    <body>
-        {% for pessoa in pessoas %}
-            pessoa.nome
-            pessoa.email
-        {% empty %}
-            Nenhum Contato
-        {% endfor %}
-    </body>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de Contatos do Meu Site</title>
+  </head>
+  <body>
+    <!-- os contatos estão em um dicionário chamado pessoas -->
+    {% for pessoa in pessoas %}
+      {{pessoa.nome}}
+      {{pessoa.idade}}
+      {{pessoa.salario}}
+      {{pessoa.email}}
+      {{pessoa.telefone}}
+      {{pessoa.dtNasc}}
+    {% empty %}
+      Ainda não tem contatos cadastrados
+    {% endfor %}
+  </body>
 </html>
