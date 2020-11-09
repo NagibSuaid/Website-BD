@@ -22,4 +22,5 @@ app_name='contatos'
 urlpatterns = [
     path('lista/', views.ContatoListView.as_view(), name='lista'),
     path('cria/', views.ContatoCreateView.as_view(), name='cria'),
+    path('edita/<int:pk>/', views.ContatoUpdateView.as_view(), name='edita'),
 ]

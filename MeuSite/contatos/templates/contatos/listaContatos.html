@@ -5,16 +5,28 @@
     <title>Lista de Contatos do Meu Site</title>
   </head>
   <body>
-    <!-- os contatos estão em um dicionário chamado pessoas -->
-    {% for pessoa in pessoas %}
-      {{pessoa.nome}}
-      {{pessoa.idade}}
-      {{pessoa.salario}}
-      {{pessoa.email}}
-      {{pessoa.telefone}}
-      {{pessoa.dtNasc}}
-    {% empty %}
-      Ainda não tem contatos cadastrados
-    {% endfor %}
+    <table>
+      <tr>
+        <th> Nome </th>
+        <th> Idade </th>
+        <th> Salário </th>
+        <th> Email </th>
+        <th> Telefone </th>
+        <th> Nascimento </th>
+      </tr>
+      {% for pessoa in pessoas %}
+        <tr>
+          <td> {{pessoa.nome}} </td>
+          <td> {{pessoa.idade}} </td>
+          <td> {{pessoa.salario}} </td>
+          <td> {{pessoa.email}} </td>
+          <td> {{pessoa.telefone}} </td>
+          <td> {{pessoa.dtNasc}} </td>
+          <td> <a href="{% url 'contatos:edita' pk=pessoa.id %}"> Editar </a> </td>
+        </tr>
+      {% empty %}
+        Ainda não tem contatos cadastrados
+      {% endfor %}
+    </table>
   </body>
 </html>

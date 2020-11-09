@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='br' dir='ltr'>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %} {% endblock %} </title>
+    </head>
+    <body>
+        <h1>Site</h1>
+        <div>
+            {% if not user.is_authenticated %}
+              <a href='{% url "sec-register" %}'>Registro</a> |
+              <a href='{% url "sec-login" %}'>Login</a> |
+            {% else %}
+              <a href='{% url "sec-profile" %}'>Perfil</a> |
+              <a href='{% url "sec-logout" %}'>Logout</a> |
+            {% endif %}
+            Olá {% firstof user.first_name user.username "visitante" %}
+        </div>
+        {% block content %}  
+        {% endblock content %}
+    </body>
+</html>
